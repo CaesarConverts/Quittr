@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <style>
         .deletion-form {
-            max-width: 600px;
+            max-width: 800px;
             margin: 2rem auto;
             padding: 2rem;
             background-color: #fff;
@@ -90,6 +90,58 @@
         .contact-alternatives a:hover {
             text-decoration: underline;
         }
+
+        .steps-container {
+            background-color: #f9f9f9;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+
+        .steps-container h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .steps-container ol {
+            padding-left: 1.5rem;
+        }
+
+        .steps-container li {
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+
+        .data-section {
+            background-color: #f0f7ff;
+            padding: 1.5rem;
+            border-radius: 5px;
+            margin: 1.5rem 0;
+        }
+
+        .data-section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .data-section h3 {
+            color: #444;
+            margin-top: 1rem;
+        }
+
+        .data-section ul {
+            padding-left: 1.5rem;
+        }
+
+        .data-section li {
+            margin-bottom: 0.5rem;
+            line-height: 1.5;
+        }
+
+        .app-name {
+            font-weight: bold;
+            color: #4CAF50;
+        }
     </style>
 </head>
 <body>
@@ -104,12 +156,66 @@
 
     <main>
         <div class="deletion-form">
-            <h1>Account Deletion Request</h1>
+            <h1>Account Deletion Request for <span class="app-name">NoFap: Ranked</span></h1>
             <p class="info-text">
-                We're sorry to see you go. To request the deletion of your account, please fill out the form below. 
-                Our team will process your request within 30 days as per data protection regulations.
+                This page provides information about how to request the deletion of your account from <span class="app-name">NoFap: Ranked</span>, 
+                developed by Quittr LLC. We are committed to protecting your privacy and ensuring you have control over your personal data.
             </p>
-            <form id="deletionForm" action="mailto:julaenw@gmail.com?subject=Account%20Deletion%20Request" method="post" enctype="text/plain">
+
+            <div class="steps-container">
+                <h2>How to Request Account or Data Deletion</h2>
+                <ol>
+                    <li><strong>Choose your request type</strong> below (account deletion or data deletion only).</li>
+                    <li><strong>Fill out the form</strong> with your email address and username associated with your <span class="app-name">NoFap: Ranked</span> account.</li>
+                    <li><strong>Submit the form</strong> to send your request to our support team.</li>
+                    <li><strong>Check your email</strong> for a confirmation message from our team.</li>
+                    <li><strong>Respond to any verification requests</strong> to confirm your identity and complete the process.</li>
+                </ol>
+                <p>Our team will process your request within 30 days as per data protection regulations.</p>
+            </div>
+
+            <div class="data-section">
+                <h2>Data Deletion Information</h2>
+                <h3>Data That Will Be Deleted</h3>
+                <ul>
+                    <li>Your account information (email address, username)</li>
+                    <li>Your profile data and settings</li>
+                    <li>Your habit tracking data and progress</li>
+                    <li>Your achievement records and statistics</li>
+                    <li>Your app preferences and customizations</li>
+                </ul>
+
+                <h3>Data Retention Period</h3>
+                <p>After you submit a deletion request:</p>
+                <ul>
+                    <li>Your account will be deactivated immediately (if requesting account deletion)</li>
+                    <li>Your personal data will be permanently deleted within 30 days</li>
+                    <li>Some anonymized, aggregated data may be retained for analytical purposes but will not be linked to your identity</li>
+                </ul>
+
+                <h3>Data That May Be Retained</h3>
+                <p>For legal and security purposes, we may retain:</p>
+                <ul>
+                    <li>Transaction records (for financial compliance)</li>
+                    <li>Logs of your deletion request (to prevent fraud)</li>
+                    <li>Any data required by law to be retained</li>
+                </ul>
+            </div>
+
+            <form id="deletionForm" action="mailto:julaenw@gmail.com?subject=Account%20Deletion%20Request%20-%20NoFap%20Ranked" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label>Request Type:</label>
+                    <div style="display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem;">
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="requestType" value="account" checked>
+                            <span>Account Deletion (delete my account and all associated data)</span>
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 0.5rem; cursor: pointer;">
+                            <input type="radio" name="requestType" value="data">
+                            <span>Data Deletion Only (delete my data but keep my account active)</span>
+                        </label>
+                    </div>
+                </div>
                 <div class="form-group">
                     <label for="email">Email Address:</label>
                     <input type="email" id="email" name="email" required>
@@ -122,7 +228,7 @@
                     <label for="message">Additional Information (Optional):</label>
                     <textarea id="message" name="message" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;"></textarea>
                 </div>
-                <button type="submit" class="submit-btn">Submit Deletion Request</button>
+                <button type="submit" class="submit-btn">Submit Request</button>
             </form>
 
             <div id="fallbackMessage" class="fallback-message">
@@ -133,7 +239,7 @@
                 <h3>Alternative Contact Methods</h3>
                 <p>If you're unable to submit the form, you can also:</p>
                 <p>1. Email us directly at: <a href="mailto:julaenw@gmail.com">julaenw@gmail.com</a></p>
-                <p>2. Contact us through Instagram: <a href="https://www.instagram.com/quittr.app/" target="_blank">@quittr.app</a></p>
+                <p>2. Contact us through Instagram: <a href="" target="_blank">@quittr.app</a></p>
                 <p>Please include your email address and username in your message.</p>
             </div>
         </div>
@@ -141,7 +247,7 @@
 
     <footer>
         <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
-            <a href="https://www.instagram.com/quittr.app/"><img src="images/insta-logo.png" alt="Instagram Logo"></a>
+            <a href=""><img src="images/insta-logo.png" alt="Instagram Logo"></a>
             <div style="display: flex; gap: 1rem;">
                 <a href="account-deletion.html" style="color: #666; text-decoration: none;">Request Account Deletion</a>
                 <a href="privacy-policy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
@@ -156,6 +262,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const form = document.getElementById('deletionForm');
             const fallbackMessage = document.getElementById('fallbackMessage');
+            const requestTypeInputs = document.querySelectorAll('input[name="requestType"]');
             
             // Check if mailto links are supported
             const isMailtoSupported = () => {
@@ -168,6 +275,17 @@
             if (!isMailtoSupported()) {
                 fallbackMessage.style.display = 'block';
             }
+            
+            // Update form action based on selected request type
+            requestTypeInputs.forEach(input => {
+                input.addEventListener('change', function() {
+                    const requestType = this.value;
+                    const subject = requestType === 'account' 
+                        ? 'Account%20Deletion%20Request%20-%20NoFap%20Ranked'
+                        : 'Data%20Deletion%20Request%20-%20NoFap%20Ranked';
+                    form.action = `mailto:julaenw@gmail.com?subject=${subject}`;
+                });
+            });
             
             // Handle form submission
             form.addEventListener('submit', function(e) {
