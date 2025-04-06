@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Account Deletion Request - NoFap: Ranked">
+    <title>Account Deletion Request - NoFap: Ranked</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="images/logo.jpg">
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .deletion-form {
+            max-width: 600px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .info-text {
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .fallback-message {
+            display: none;
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f8f8;
+            border-left: 4px solid #ff9800;
+            border-radius: 4px;
+        }
+
+        .contact-alternatives {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f0f7ff;
+            border-radius: 5px;
+        }
+
+        .contact-alternatives h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .contact-alternatives p {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-alternatives a {
+            color: #2196F3;
+            text-decoration: none;
+        }
+
+        .contact-alternatives a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <a href="index.html" style="text-decoration: none; color: inherit; display: flex; align-items: center;">
+                <img src="images/logo.png" alt="Quittr Logo" style="border-radius: 50%; object-fit: cover;">
+                <h1>NoFap: Ranked</h1>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="deletion-form">
+            <h1>Account Deletion Request</h1>
+            <p class="info-text">
+                We're sorry to see you go. To request the deletion of your account, please fill out the form below. 
+                Our team will process your request within 30 days as per data protection regulations.
+            </p>
+            <form id="deletionForm" action="mailto:julaenw@gmail.com?subject=Account%20Deletion%20Request" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Additional Information (Optional):</label>
+                    <textarea id="message" name="message" rows="4" style="width: 100%; padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px;"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Submit Deletion Request</button>
+            </form>
+
+            <div id="fallbackMessage" class="fallback-message">
+                <p>It seems you don't have an email client configured on your device. Here are alternative ways to request account deletion:</p>
+            </div>
+
+            <div class="contact-alternatives">
+                <h3>Alternative Contact Methods</h3>
+                <p>If you're unable to submit the form, you can also:</p>
+                <p>1. Email us directly at: <a href="mailto:julaenw@gmail.com">julaenw@gmail.com</a></p>
+                <p>2. Contact us through Instagram: <a href="https://www.instagram.com/quittr.app/" target="_blank">@quittr.app</a></p>
+                <p>Please include your email address and username in your message.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
+            <a href="https://www.instagram.com/quittr.app/"><img src="images/insta-logo.png" alt="Instagram Logo"></a>
+            <div style="display: flex; gap: 1rem;">
+                <a href="account-deletion.html" style="color: #666; text-decoration: none;">Request Account Deletion</a>
+                <a href="privacy-policy.html" style="color: #666; text-decoration: none;">Privacy Policy</a>
+            </div>
+            <p>Copyrights @ 2025 NoFap: Ranked, LLC. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('deletionForm');
+            const fallbackMessage = document.getElementById('fallbackMessage');
+            
+            // Check if mailto links are supported
+            const isMailtoSupported = () => {
+                const mailtoLink = document.createElement('a');
+                mailtoLink.href = 'mailto:test@example.com';
+                return mailtoLink.protocol === 'mailto:';
+            };
+            
+            // Show fallback message if mailto is not supported
+            if (!isMailtoSupported()) {
+                fallbackMessage.style.display = 'block';
+            }
+            
+            // Handle form submission
+            form.addEventListener('submit', function(e) {
+                // We'll let the form submit normally, but if it fails, the fallback message will be visible
+                setTimeout(() => {
+                    fallbackMessage.style.display = 'block';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html> 
